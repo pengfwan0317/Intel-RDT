@@ -1,5 +1,8 @@
 # Introduction to INTEL RDT
 ## * [RDT brief introduction](https://github.com/pengfwan0317/Intel-RDT/blob/master/Resource%20Director%20Technology)
+* RMID
+	* Thread
+* CLOS
 ## * Cache Monitoring Technology (CMT)缓存监测技术 <br>
 * 11
 	* 22
