@@ -1,2 +1,3 @@
 CPU cache info in RHEL7.6
 Test blade: PO-SKL
+![image]()
