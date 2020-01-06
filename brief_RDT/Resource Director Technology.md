@@ -2,7 +2,7 @@
 我们知道在一个虚拟化环境中，宿主机的资源（包括CPU cache和内存带宽）都是共享的。但是如果有一个消耗cache的应用快速消耗了L3缓存，或者一个应用消耗了系统大量内存带宽，那么如何保证其他虚拟机应用呢？如何限制这些“可恶”的邻居呢？如何提升性能？
 针对上诉问题，以前都是通过控制虚拟机逻辑资源来实现，但是调整的粒度实在太粗，针对处理器缓存这样敏感而稀缺的资源，几乎是无能为力的。为此英特尔推出了RDT技术，希望可以解决这个问题。
 #	RDT技术组成
-RDT技术有其实有5个功能模块，分别是
+RDT技术有其实有5个功能模块，分别是 <br>
 Cache Monitoring Technology (CMT)缓存监测技术、-- BDW <br>
 [Cache Allocation Technology (CAT)缓存分配技术](https://github.com/pengfwan0317/Intel-RDT/blob/master/CAT/Cache%20Allocation%20Technology.md)、-- BDW <br>
 Memory Bandwidth Monitoring (MBM)内存带宽监测技术、-- BDW <br>
