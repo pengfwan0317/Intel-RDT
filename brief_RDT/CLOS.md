@@ -2,7 +2,7 @@
 Platform RDT atchitecture defined RMIDs and CLOS
 * Threads/Apps/VMs grouped into Classe of Service(CLOS) for resource monitoring
 * Resource usage of any app, VM or a combination can be monitored with a CLOS.
-* Specify the CLOS for a thread via the per-core IA32_PQR_ASSOC("PQR") MSR
+* Specify the CLOS for a thread via the per-core [IA32_PQR_ASSOC("PQR")](https://github.com/pengfwan0317/Intel-RDT/blob/master/brief_RDT/RDT%20MSR.png) MSR
 ![image](https://github.com/pengfwan0317/Intel-RDT/blob/master/brief_RDT/CLOS.png)
 #	CLOS
 CAT中引入了一个中间结构叫做CLOS(Class of Service)，可以理解为资源控制标签。此外每个CLOS定义了CBM（capacity bitmasks），CLOS和CBM一起，确定有多少cache可以被这个CLOS使用。
