@@ -1,7 +1,8 @@
 # Introduction to INTEL RDT
-## * [RDT brief introduction](https://github.com/pengfwan0317/Intel-RDT/blob/master/brief_RDT/Resource%20Director%20Technology.md)
-* [RMID](https://github.com/pengfwan0317/Intel-RDT/blob/master/brief_RDT/RMIDs.md)
-* [CLOS](https://github.com/pengfwan0317/Intel-RDT/blob/master/brief_RDT/CLOS.md)
+## * [RDT brief introduction]
+* [RDT brief introduction](https://github.com/pengfwan0317/Intel-RDT/blob/master/brief_RDT/Resource%20Director%20Technology.md)
+  * [RMID](https://github.com/pengfwan0317/Intel-RDT/blob/master/brief_RDT/RMIDs.md)
+  * [CLOS](https://github.com/pengfwan0317/Intel-RDT/blob/master/brief_RDT/CLOS.md)
 ## * Cache Monitoring Technology (CMT)缓存监测技术 <br>
 * [Brief_CMT_introduction](https://github.com/pengfwan0317/Intel-RDT/blob/master/CMT/brief_CMT_introduction.md)
 * [Intel’s Cache Monitoring Technology Software-Visible Interfaces](https://github.com/pengfwan0317/Intel-RDT/blob/master/CMT/Intel%E2%80%99s%20Cache%20Monitoring%20Technology%20Software-Visible%20Interfaces.md)
