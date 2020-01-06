@@ -3,11 +3,11 @@
 针对上诉问题，以前都是通过控制虚拟机逻辑资源来实现，但是调整的粒度实在太粗，针对处理器缓存这样敏感而稀缺的资源，几乎是无能为力的。为此英特尔推出了RDT技术，希望可以解决这个问题。
 #	RDT技术组成
 RDT技术有其实有5个功能模块，分别是
-Cache Monitoring Technology (CMT)缓存监测技术、-- BDW
-[Cache Allocation Technology (CAT)缓存分配技术](https://github.com/pengfwan0317/Intel-RDT/blob/master/CAT/Cache%20Allocation%20Technology.md)、-- BDW
-Memory Bandwidth Monitoring (MBM)内存带宽监测技术、-- BDW
-Memory Bandwidth Allocation (MBA)内存带宽分配技术、-- HSW
-Code and Data Prioritization (CDP)代码和数据分区技术。 -- BDW
+Cache Monitoring Technology (CMT)缓存监测技术、-- BDW <br>
+[Cache Allocation Technology (CAT)缓存分配技术](https://github.com/pengfwan0317/Intel-RDT/blob/master/CAT/Cache%20Allocation%20Technology.md)、-- BDW <br>
+Memory Bandwidth Monitoring (MBM)内存带宽监测技术、-- BDW <br>
+Memory Bandwidth Allocation (MBA)内存带宽分配技术、-- HSW <br>
+Code and Data Prioritization (CDP)代码和数据分区技术。 -- BDW <br>
 5个模块可以分为监控和控制两大类，CMT和MBM为监控技术，而CAT、MBA和CDP为控制技术。
 RDT允许OS或VMM来监控线程，应用或VM使用的cache/内存带宽空间。通过分析cache/内存带宽使用率，OS或VMM可以优化调度策略提高效能，使得高级优化技术可以实现。
 #	为什么需要RDT
