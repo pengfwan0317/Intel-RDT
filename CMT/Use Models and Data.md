@@ -1,7 +1,7 @@
 # High-Level Monitoring Usage Models
 Shared resources within a multiprocessor chip  may be managed through a combination of monitoring and allocation control hooks (Figure 1) in a closed-loop fashion to enable resource-aware application management. Resource monitoring provides increased visibility so that resource utilization can be tracked, application sensitivity to available resources can be profiled, and performance/resource inversion cases can be detected. 
 
-
+![image](https://github.com/pengfwan0317/Intel-RDT/blob/master/CMT/SW_HW_sesource.PNG)
 
 Figure 1. Resource Monitoring is a critical component in any shared resource management system to enable informed resource allocation decisions in a dynamic datacenter environment.
 
