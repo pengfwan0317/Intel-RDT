@@ -18,6 +18,7 @@ Threads can be monitored individually or in groups, and multiple threads can be 
 
 
 ![image](https://github.com/pengfwan0317/Intel-RDT/blob/master/CMT/RMIDs_logical.png)
+
 Figure 2. Threads, applications, VMs or any combination can be associated with an RMID, enabling very flexible monitoring. As an example, all threads in a VM could be given the same RMID for simple per-VM monitoring.
 
 Since each application or VM running on the platform consists of one or more threads, each application or VM can be monitored. For instance, all threads in a given VM could be assigned the same RMID. Similarly, all threads in an application could be assigned the same RMID. If the RMID is used only for monitoring that application (not a group of applications) then the occupancy reported by the system for that RMID will include only the specified application.
@@ -26,6 +27,7 @@ It is expected that in typical cases where an OS or VMM is enabled to support CM
 
 
 ![image](https://github.com/pengfwan0317/Intel-RDT/blob/master/CMT/thread_logical.png)
+
 Figure 3. The PQR register (containing an RMID) stored as part of a thread or VCPU state, which is written onto the thread-specific registers when a software thread is scheduled on a hardware thread for execution.
 
 Note that if a CMT-supported OS or VMM is not available, software may still make use of CMT by pinning RMIDs to cores, then carefully tracking which applications are allowed to run on which cores, which can be mapped to cache occupancy.
@@ -43,6 +45,7 @@ The enumeration of CMT is hierarchical (Figure 4). To detect the presence of mon
 
 
 ![image](https://github.com/pengfwan0317/Intel-RDT/blob/master/CMT/CPUID_enumeration.png)
+
 Figure 4. Hierarchical CPUID enumeration of monitoring features.
 
 Once the presence of monitoring has been confirmed, the resources on which monitoring is supported can be enumerated through a new CPUID 0xF leaf. General information about which resources are supported is enumerated within CPUID.0xF.0 (note – subleaf zero is a special case which gives details about all monitoring features on the platform).
@@ -66,6 +69,7 @@ Once the software has specified a valid RMID+Event ID pair, the hardware looks u
 
 
 ![image](https://github.com/pengfwan0317/Intel-RDT/blob/master/CMT/IA32_QM_CTR_MSR.png)
+
 Figure 6. The IA32_QM_CTR MSR provides resource monitoring data for an RMID+EventID specified in the IA32_QM_EVTSEL MSR. If the E/U bits are not set then the data is valid.
 
 In the case of the L3 CMT feature, the data returned from the IA32_QM_CTR MSR may be optionally multiplied by an upscaling factor from CPUID to convert to bytes before consumption in software. If software does not apply the upscaling factor the value returned is still useful for relative occupancy comparisons between applications/VMs however as the scale is linear.
