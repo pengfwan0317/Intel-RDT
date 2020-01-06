@@ -2,7 +2,7 @@
 Platform RDT artecture defined RIMDs
 * Threads/Apps/VMs grouped into RDIMs for resource monitoring
 * Any thread, app, VM or a combination can be monitored with any RMID
-* Specify the RMID for a thread via the per-core IA32_PQR_ASSOC("PQR") MSR
+* Specify the RMID for a thread via the per-core [IA32_PQR_ASSOC](https://github.com/pengfwan0317/Intel-RDT/blob/master/brief_RDT/RDT%20MSR.png)("PQR") MSR
 ![image](https://github.com/pengfwan0317/Intel-RDT/blob/master/brief_RDT/RMID1.png)
 #	RMID
 OS或VMM会给每个应用或虚拟机标记一个软件定义的ID，叫做RMID（Resource Monitoring ID），通过RMID可以同时监控运行在多处理器上相互独立的线程，注意这里是指应用线程而是不是硬件的core，这个是由根本差异的。每个处理器可用的RMIDs数量是不一样的，这个可以通过CPUID指令获取得到，RMID数量不一样意味着可以监控独立线程的数量会有差异，如果一个系统上运行过多的线程可能会导致不能监控到所有线程的资源使用。
