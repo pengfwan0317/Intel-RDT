@@ -11,7 +11,7 @@ An RMID allows threads, applications or VMs to be tracked using the CMT feature.
 
 The association of a thread with an RMID is handled by the OS/VMM, which writes a per-thread register (IA32_PQR_ASSOC, or PQR for short) on swap-on to a thread (Step 2 in Figure 2). Note that details of software enabling and support are discussed in the next in the series.
 
-
+![image](https://github.com/pengfwan0317/Intel-RDT/blob/master/CMT/CMT_three_steps_process.PNG)
 
 Figure 2. The three-step process common across CMT use models - enumeration, association and reporting.
 
@@ -28,6 +28,7 @@ Real-time profiling: Application performance vs. Cache Occupancy (Figure 3)
 Detection of cache-starved applications (which can be migrated for better performance)
 Advanced Cache-Aware Scheduling for better system throughput
 
+![image](https://github.com/pengfwan0317/Intel-RDT/blob/master/CMT/CMT_visiable.PNG)
 
 Figure 3. Example Cache Monitoring Technology profiling deployment
 
@@ -45,13 +46,13 @@ A detailed example of a real-time profiling use case follows to illustrate the c
 # Cache Monitoring Technology Example Data: Application Profiling
 Through the use of CMT, applications can be monitored simultaneously while running on a platform. In the typical non-virtualized case shown in Figure 4 below, a number of applications are run on a 14-core Intel® Xeon®  E5-2600 v3 processor based system with RMIDs pinned to each core. As applications run, their cache occupancy can be sampled periodically. In Figure 4 periodic spikes in occupancy (green line) are visible from a periodic operating system task. In the middle of the plot a new memory streaming application is invoked on a core, which quickly consumes all of the L3 cache and then terminates. Using CMT this aggressor application can be detected, and if its behavior is found to interfere with more important applications, the aggressor application could be moved to another processor or another node. If the aggressor application is simply resource-hungry but high-priority then its true cache sensitivity can be measured over time using CMT (Figure 5, discussed later). 
 
-
+![image](https://github.com/pengfwan0317/Intel-RDT/blob/master/CMT/cache_occupy.PNG)
 
 Figure 4. CMT using one RMID pinned to each core, shown as a time series. The large spike in occupancy in the middle of the plot was caused by a memory-streaming application which quickly consumed all of the cache then exited. This data along with subsequent plots were generated from collected on an Intel® Xeon®  E5 v3 processor-based server.
 
 Through the use of Cache Monitoring Technology the sensitivity of applications, especially cache-hungry applications can be measured dynamically, and a history can be constructed (Figure 5). 
 
-
+![image](https://github.com/pengfwan0317/Intel-RDT/blob/master/CMT/perf_vs_cache.PNG)
 
 Figure 5. Cache Sensitivity plotted using CMT for a variety of applications drawn from SPEC* CPU2006. 
 
@@ -61,7 +62,7 @@ If an application’s cache sensitivity is curve-fit (typically using a logarith
 
 More advanced analysis can also be conducted once the curve fit is in place. For instance, taking the derivative of the performance vs. occupancy (cache sensitivity) curve with respect to occupancy yields a curve providing cache sensitivity per unit of cache occupancy. By adding a threshold (Figure 6), cache sensitivity can be precisely derived for a given application, and a tunable optimal operating point can be determined. For instance, the optimal cache operating point might be defined as the point where adding an additional 1MB of L3 cache only increases application performance by 1%. Such thresholds can be used for dynamic scheduling, and for detecting cache-starved applications. 
 
-
+![image](https://github.com/pengfwan0317/Intel-RDT/blob/master/CMT/cache_vs_perf.PNG)
 
 Figure 6. Curve fitting application cache sensitivity (left side) then taking the derivative with respect to occupancy can generate a view of cache sensitivity vs. occupancy (right side), which can be used with simple thresholds to algorithmically measure the optimal cache operating point of any application. Here Instructions per Cycle (IPC) is used as a proxy for application performance.
 
@@ -69,7 +70,7 @@ The ability to dynamically measure the optimal cache operating point of an appli
 
 The occupancy curves collected for various applications could be used to build long-term histories of applications and schedule optimally across sockets. For instance as shown on the left side of Figure 7 if two compute-intensive applications are co-located on a processor with small working sets (e.g., 4MB ideal cache size on a processor with 35MB L3 cache) then applications could be rebalanced across sockets to optimize L3 cache utilization and potentially increase performance (or stored for the next time the applications are run rather than dynamically moving them, simplifying the NUMA memory image implications). 
 
-
+![image](https://github.com/pengfwan0317/Intel-RDT/blob/master/CMT/rebalance_cache.PNG)
 
 Figure 7. Rebalancing applications across processors for optimal cache utilization using CMT.
 
