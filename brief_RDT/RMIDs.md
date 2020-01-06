@@ -14,3 +14,5 @@ OS或VMM会给每个应用或虚拟机标记一个软件定义的ID，叫做RMID
 在软件设置了合理的RMID+Event ID后，硬件会查看指定的数据，并通过MSR (IA32_QM_CTR)返回。
 其中E/U 位表示Error和Unavailable，当数据合法时不会设置这两个位。那么数据就可以被软件使用。
 Intel官方文档中提示，后续RMID的含义会扩展，包含更多的资源监控。
+#	RMID对OS的需求
+这个里有个问题，就是如果线程发生调度到其他core，那么硬件core上的MSR (IA32_PQR_ASSOC)上所记录的RMID对应的线程并没有运行在本core上了，就会导致数据不准确了。所以希望OS/VMM支持，将RMID加入到应用线程状态结构体中，这样在线程切换的时候MSR (IA32_PQR_ASSOC)中RMID能自动更新，确保跟踪的正确性。
