@@ -4,7 +4,7 @@
 #	RDT技术组成
 RDT技术有其实有5个功能模块，分别是
 Cache Monitoring Technology (CMT)缓存监测技术、-- BDW
-Cache Allocation Technology (CAT)缓存分配技术、-- BDW
+[Cache Allocation Technology (CAT)缓存分配技术](https://github.com/pengfwan0317/Intel-RDT/blob/master/CAT/Cache%20Allocation%20Technology.md)、-- BDW
 Memory Bandwidth Monitoring (MBM)内存带宽监测技术、-- BDW
 Memory Bandwidth Allocation (MBA)内存带宽分配技术、-- HSW
 Code and Data Prioritization (CDP)代码和数据分区技术。 -- BDW
