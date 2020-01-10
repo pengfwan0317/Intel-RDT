@@ -8,4 +8,6 @@
 | type | type of the cache - data, inst or unified     | Data |
 | ways_of_associativity | number of ways in which a particular memory block can be placed in the cache     |  8 |
 | shared_cpu_list |       |    0,32 |
-| shared_cpu_map |       | 00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001,00000001  |
+| shared_cpu_map |       |        |
+00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001,00000001  
+每个bit表示一个cpu，1个数字可以表示4个cpu 截取0000000f的后4位，转换为2进制表示
