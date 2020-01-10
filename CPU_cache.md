@@ -1,11 +1,11 @@
-|File         | Are           | Cool  |
+|File         | explanation           | PO CPU0 index0 Value  |
 | ------------- |:-------------:| -----:|
-| coherency_line_size      | right-aligned | $1600 |
-| level      | centered      |   $12 |
-| number_of_sets | are neat      |    $1 |
-| physical_line_partition | are neat      |    $1 |
-| size | are neat      |    $1 |
-| type | are neat      |    $1 |
-| ways_of_associativity | are neat      |    $1 |
-| shared_cpu_list | are neat      |    $1 |
-| shared_cpu_map | are neat      |    $1 |
+| coherency_line_size | size of each cache line usually representing the minimum amount of data that gets transferred from memory | 64 |
+| level | represents the hierarchy in the multi-level cache      | 1 |
+| number_of_sets | total number of sets, a set is a collection of cache lines sharing the same index  | 64 |
+| physical_line_partition | number of physical cache lines sharing the same cachetag   | 1 |
+| size | Total size of the cache     |  32K |
+| type | type of the cache - data, inst or unified     | Data |
+| ways_of_associativity | number of ways in which a particular memory block can be placed in the cache     |  8 |
+| shared_cpu_list |       |    0,32 |
+| shared_cpu_map |       |   |
