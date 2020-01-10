@@ -1,4 +1,5 @@
 ![image](https://github.com/pengfwan0317/Intel-RDT/blob/master/Cache_in_RHEL.png)
+
 |File         | explanation           | PO CPU0 index0 Value  |
 | ------------- |:-------------:| -----:|
 | coherency_line_size | size of each cache line usually representing the minimum amount of data that gets transferred from memory | 64 |
