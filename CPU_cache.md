@@ -8,4 +8,4 @@
 | type | type of the cache - data, inst or unified     | Data |
 | ways_of_associativity | number of ways in which a particular memory block can be placed in the cache     |  8 |
 | shared_cpu_list |       |    0,32 |
-| shared_cpu_map |       |   |
+| shared_cpu_map |       | 00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001,00000001  |
